@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "1ebd9ffc-df7c-4a89-abfe-9f71bf011c24",
+		"name": "Work Flow Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28259391"
+	},
+	"item": [
+		{
+			"name": "Google",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"postman.setNextRequest(\"YouTube\")\r",
+							"\r",
+							"pm.test(\"Cookie present AEC\", ()=> {\r",
+							"    pm.expect(pm.cookies.has('AEC')).to.be.true;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"postman.setNextRequest(\"Yahoo\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.google.co.in/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"google",
+						"co",
+						"in"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Yahoo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.yahoo.com/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"yahoo",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "YouTube",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.youtube.com/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"youtube",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Flipkart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.flipkart.com/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"flipkart",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
